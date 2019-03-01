@@ -2,11 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Your Feedback</title>
+    <title>Travel Space - Your Feedback</title>
+    <style>
+        div {
+            background-color: gray;
+        }
+        .signup {
+            padding: 20px;
+        }
+        #bus {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        textarea{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
 </head>
 <body>
-    
+    <div>
+        <table style="width:100%">
+            <tr>
+                <td width="1%"><br></td>
+                <td class="signup" rowspan="2"><p><b><i>Log-in</i></b></p></td>
+                <td width="19%"><br></td>
+                <td class="signup" rowspan="2" style="text-align: right; font-size: 40px"><b>Travel Space</b></td>
+                <td style="text-align: right;"><b>Join Now</b><br>Receive credits for reporting crowdedness!</td>
+                <td><img src="image/reward_sign.png" width="65" height="65"></td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <br>
+    <h2 style="text-align: center">Please tell us what you think below.</h2>
+    <br>
+    <form>
+        <textarea name="feedback" rows="10" cols="100">Enter your feedback here...</textarea>
+        <br>
+        <input style="display: block; margin-right: auto; margin-left: auto" type="submit">
+    </form>
+    <br>
+    <div style="background-color: gray">
+        <div id="myDropdown" class="dropdown-content">
+            <a href="#">Default</a>
+            <a href="#">Skytrain</a>
+            <a href="#">Bus</a>
+        </div>
+    </div>
+    <br>
+    <img id="logo" src="" width="1250" height="300" alt="Travel Space Logo">
 </body>
 </html>
