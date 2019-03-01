@@ -4,9 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
+    <title>Travel Space</title>
+    <style>
+        div {
+            background-color: gray;
+        }
+        .signup {
+            padding: 20px;
+        }
+        #bus {
+            width: 100%;
+            max-width: 500px;
+        }
+    </style>
 </head>
 <body>
-    <p>Hi, guys! This is Shih-Hung and Joshua Kim and now James too.</p>
+    <div>
+        <table style="width:100%">
+            <tr>
+                <td width="1%"><br></td>
+                <td class="signup" rowspan="2"><p><b><i>Log-in</i></b></p></td>
+                <td width="19%"><br></td>
+                <td class="signup" rowspan="2" style="text-align: right; font-size: 40px"><b>Travel Space</b></td>
+                <td style="text-align: right;"><b>Join Now</b><br>Receive credits for reporting crowdedness!</td>
+                <td><img src="image/reward_sign.png" width="65" height="65"></td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <br>
+    <h2 style="text-align: center">Think you can get on board? Check now!</h2>
+    <br>
+    <br>
+    <div class="dropdown">
+      <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+      <div id="myDropdown" class="dropdown-content">
+        <a href="#">Default</a>
+        <a href="#">Skytrain</a>
+        <a href="#">Bus</a>
+      </div>
+    </div>
+    <br>
+    <img id="bus" src="image/bus_sky.jpg" width="1250" height="300" alt="bus and skytrain">
 </body>
 </html>
