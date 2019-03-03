@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)http://127.0.0.1:5500/rewards.html -->
+<html lang="en" class="gr__127_0_0_1"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reward</title>
+    <style>
+        div {
+            background-color: gray;
+        }
+
+        .signup {
+            padding: 20px;
+        }
+
+        #bus {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        h1 {
+            position: absolute;
+            width: 40%;
+            top: 20%;
+            left: 20%;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 3em;
+        }
+
+        .boxOne dt {
+            display: block;
+            float: left;
+            width: 40%;
+            text-align: right;
+        }
+
+        .boxOne dt:after {
+            content: ':';
+        }
+
+        .boxOne dd {
+            display: block;
+        }
+
+        dl.boxOne {
+            top: 80%;
+            left: 20%;
+            width: 50%;
+            position: absolute;
+            height: 20%;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 50px 20px 10px 50px;
+            background-color: lightgrey;
+            font-size: 20px;
+        }
+        dl.boxOne {
+            top: 40%;
+        }
+        
+        span.points {
+            position: absolute;
+            width:100px;
+            text-align: center
+        }
+    </style>
+</head>
+
+<body data-gr-c-s-loaded="true">
+    <div>
+        <table style="width:100%">
+            <tbody><tr>
+                <td width="1%"><br></td>
+                <td class="signup" rowspan="2">
+                    <p><b><i>Welcome, Bob!</i></b></p>
+                </td>
+                <td width="19%"><br></td>
+                <td class="signup" rowspan="2" style="text-align: left; font-size: 40px"><b>Travel Space</b></td>
+                <td style="text-align: right;"><b>2950pts</b></td>
+                <td><img src="./Reward_files/reward_sign.png" width="65" height="65"></td>
+            </tr>
+        </tbody></table>
+    </div>
+    <h1>Claim youre reward!</h1>
+
+    <dl class="boxOne">
+        <table>
+            <tbody><tr>
+                <td>
+                    <img class="creditCard" src="./Reward_files/creditCard.png" alt="Credit Card icon" width="100px"><br>
+                    <span class="points">50000pts</span>
+                </td>
+                <td>
+                    <dt>Reward item</dt><dd>&nbsp;3 zone monthly pass</dd>
+                    <br>
+                    <dt>Description</dt><dd>&nbsp;Thank you for the continuous effort. We will draw 5 people for
+                        this reward.
+                    </dd>
+                    <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </dl>
+    <!-- <p class="box" class="boxTwo">2</p>
+    <p class="box" class="boxThree">3</p> -->
+    
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					head.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					head.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body><span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span></html>

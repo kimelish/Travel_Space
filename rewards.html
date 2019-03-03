@@ -1,12 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Rewards</title>
+    <title>Reward</title>
+    <style>
+        div {
+            background-color: gray;
+        }
+
+        .signup {
+            padding: 20px;
+        }
+
+        #bus {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        h1 {
+            position: absolute;
+            width: 40%;
+            top: 20%;
+            left: 20%;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 3em;
+        }
+
+        .box dt {
+            display: block;
+            float: left;
+            width: 20%;
+            text-align: right;
+        }
+
+        .box dt:after {
+            content: ':';
+        }
+
+        .box dd {
+            display: block;
+        }
+
+        dl.box {
+            top: 35%;
+            left: 20%;
+            width: 60%;
+            position: absolute;
+            height: 20%;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 50px 20px 10px 50px;
+            background-color: lightgrey;
+            font-size: 20px;
+        }
+
+        span.points {
+            position: absolute;
+            width:100px;
+            text-align: center
+        }
+
+        .claim {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            border: 1px solid black;
+            border-radius: 20px;
+            padding: 10px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 20px;
+            background-color: rgb(172, 170, 170);
+        }
+
+        dl.boxOne {
+            top: 35%;
+        }
+
+        dl.boxTwo {
+            top: 70%;
+        }
+
+        dl.boxThree {
+            top: 105%;
+        }
+
+    </style>
 </head>
+
 <body>
-    <p>Here is the start of the Rewards page. -James</p>
+    <div>
+        <table style="width:100%">
+            <tr>
+                <td width="1%"><br></td>
+                <td class="signup" rowspan="2">
+                    <p><b><i>Welcome, Bob!</i></b></p>
+                </td>
+                <td width="19%"><br></td>
+                <td class="signup" rowspan="2" style="text-align: left; font-size: 40px"><b>Travel Space</b></td>
+                <td style="text-align: right;"><b>2950pts</b></td>
+                <td><img src="image/reward_sign.png" width="65" height="65"></td>
+            </tr>
+        </table>
+    </div>
+    <h1>Claim youre reward!</h1>
+
+    <dl class="box boxOne">
+        <table style="width:100%">
+            <tr>
+                <td>
+                    <img class="creditCard" src="image/creditCard.png" alt="Credit Card icon" width="100px"><br>
+                    <span class="points">50000pts</span>
+                </td>
+                <td>
+                    <dt>Reward item</dt><dd>&nbsp3 zone monthly pass</dd>
+                    <br>
+                    <dt>Description</dt><dd>&nbspThank you for the continuous effort. We will draw 5 people for this reward.</dd>
+                    <button class="claim">Claim</button>
+                </td>
+            </tr>
+        </table>
+    </dl>
+
+    <dl class="box boxTwo">
+        <table style="width:100%">
+            <tr>
+                <td>
+                    <img class="creditCard" src="image/creditCard.png" alt="Credit Card icon" width="100px"><br>
+                    <span class="points">35000pts</span>
+                </td>
+                <td>
+                    <dt>Reward item</dt>
+                    <dd>&nbsp2 zone monthly pass</dd>
+                    <br>
+                    <dt>Description</dt>
+                    <dd>&nbspThank you for the continuous effort. We will draw 5 people for this reward.</dd>
+                    <button class="claim">Claim</button>
+                </td>
+            </tr>
+        </table>
+    </dl>
+
+    <dl class="box boxThree">
+        <table style="width:100%">
+            <tr>
+                <td>
+                    <img class="creditCard" src="image/creditCard.png" alt="Credit Card icon" width="100px"><br>
+                    <span class="points">20000pts</span>
+                </td>
+                <td>
+                    <dt>Reward item</dt>
+                    <dd>&nbsp1 zone monthly pass</dd>
+                    <br>
+                    <dt>Description</dt>
+                    <dd>&nbspThank you for the continuous effort. We will draw 5 people for this reward.</dd>
+                    <button class="claim">Claim</button>
+                </td>
+            </tr>
+        </table>
+    </dl>
+
 </body>
+
 </html>
