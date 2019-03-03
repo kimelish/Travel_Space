@@ -1,10 +1,132 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User Information Page</title>
+    <style>
+        div {
+            background-color: gray;
+        }
 
+        .signup {
+            padding: 20px;
+        }
+
+        #bus {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .fade {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(128, 128, 128, 0.8);
+            color: grey;
+        }
+
+        .userInfo {
+            margin: auto;
+            padding: 50px 0px;
+            width: 50%;
+            position: absolute;
+            top: 25%;
+            left: 25%;
+            border: 2px solid black;
+            border-radius: 10px;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: left;
+            font-size: 1em;
+            color:black;
+            background-color: white;
+        }
+        
+        .userInfo dt {
+            display: block;
+            float: left;
+            width: 40%;
+            text-align: right;
+        }
+
+        .userInfo dt:after {
+            content: ':'
+        }
+
+        .userInfo dd {
+            display: block;
+        }
+
+        .userInfoConfirm {
+            position: absolute;
+            right: 50px;
+            bottom: 50px;
+            border: 1px solid black;
+            border-radius: 30px;
+            padding: 10px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 20px;
+            background-color: rgb(241, 241, 241);
+        }
+
+    </style>
 </head>
-<body>
 
+<body>
+    <p class="fade">
+        <dl class="userInfo">
+            <dt>Name</dt><dd>Bob</dd>
+            <br>
+            <dt>Gender</dt><dd>Male</dd>
+            <br>
+            <dt>Address</dt><dd>23 Street Rd., Vancouver, BC.</dd>
+            <br>
+            <dt>Tel</dt><dd>778-123-1234</dd>
+            <br>
+            <dt>Email</dt><dd>bobbus@email.com</dd>
+            <br>
+            <dt>Default Location</dt><dd>Granville Station</dd>
+            <br>
+            <br>
+            <dt>Password</dt><dd>xxxxxxxx</dd>
+            <br>
+            <br>
+            <button class="userInfoConfirm">Confirm</button>
+        </dl>
+    </p>
+    <div>
+        <table style="width:100%">
+            <tr>
+                <td width="1%"><br></td>
+                <td class="signup" rowspan="2">
+                    <p><b><i>Log-in</i></b></p>
+                </td>
+                <td width="19%"><br></td>
+                <td class="signup" rowspan="2" style="text-align: right; font-size: 40px"><b>Travel Space</b></td>
+                <td style="text-align: right;"><b>Join Now</b><br>Receive credits for reporting crowdedness!</td>
+                <td><img src="image/reward_sign.png" width="65" height="65"></td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <br>
+    <h2 style="text-align: center">Think you can get on board? Check now!</h2>
+    <br>
+    <br>
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+        <div id="myDropdown" class="dropdown-content">
+            <a href="#">Default</a>
+            <a href="#">Skytrain</a>
+            <a href="#">Bus</a>
+        </div>
+    </div>
+    <br>
+    <img id="bus" src="image/bus_sky.jpg" alt="bus and skytrain">
 </body>
 
 </html>
