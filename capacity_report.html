@@ -23,6 +23,27 @@
             width: 700px;
             height: 500px;
         }
+        .reportingButtons{
+            display: block;
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        #buttonsDiv{
+            border: solid black;
+            border-width: 5px;
+            margin: auto;
+            width: 600px;
+            padding: 50px;
+        }
+        #travelSpaceHeader{
+            text-align: right;
+            font-size: 40px;
+            text-decoration: none;
+            color: black;
+        }
     </style>
 </head>
 <body>
@@ -32,7 +53,7 @@
                 <td width="1%"><br></td>
                 <td class="signup" rowspan="2"><p><b><i>Log-in</i></b></p></td>
                 <td width="19%"><br></td>
-                <td class="signup" rowspan="2" style="text-align: right; font-size: 40px"><b>Travel Space</b></td>
+                <td class="signup" rowspan="2" id="travelSpaceHeader"><b><a href="index.html" id="travelSpaceHeader">Travel Space</a></b></td>
                 <td style="text-align: right;"><b>Join Now</b><br>Receive credits for reporting crowdedness!</td>
                 <td><img src="image/reward_sign.png" width="65" height="65" alt="reward sign"></td>
             </tr>
@@ -44,14 +65,48 @@
     <br>
     <h2 style="text-align: center">How Crowded is Your Bus/Skytrain?</h2>
     <br>
-    <img id="Reporting_options" src="image/Reporting_Buttons_Placeholder.jpg" alt="reporting options" class="center">
+    <div id="buttonsDiv">
+    <button class="reportingButtons" id="veryCrowdedButton">Very Crowded</button>
+    <br>
+    <button class="reportingButtons" id="crowdedButton">Crowded</button>
+    <br>
+    <button class="reportingButtons" id="okayButton">Okay</button>
+    <br>
+    <button class="reportingButtons" id="roomyButton">Roomy</button>
+    <br>
+    <button class="reportingButtons" id="veryRoomyButton">Very Roomy</button>
+    </div>
     <br>
     <br>
     <img id="bus" src="image/bus_sky.jpg" width="1250" height="300" alt="bus and skytrain">
     <br>
     <br>
     <div style="position: absolute; width: 100%; height: 80px; bottom: auto;; color: gray">
-    <p>test</p>
+    <p></p>
     </div>
+
+    <script>
+    let the_crowdedness_image = search_result.document.getElementById("bus");
+    function changeToVeryCrowdedImage(){
+        //will change image on search_result.html to the very crowded image
+    }
+    function changeToCrowdedImage(){
+        //will change image on search_result.html to the crowded image
+    }
+    function changeToOkayImage(){
+        //will change image on search_result.html to the okay crowded image
+    }
+    function changeToRoomyImage(){
+        //will change image on search_result.html to the roomy image
+    }
+    function changeToVeryRoomyImage(){
+        //will change image on search_result.html to the very roomy image
+    }
+    document.getElementById("veryCrowdedButton").onclick = changeToVeryCrowdedImage;
+    document.getElementById("crowdedButton").onclick = changeToCrowdedImage;
+    document.getElementById("okayButton").onclick = changeToOkayImage;
+    document.getElementById("roomyButton").onclick = changeToRoomyImage;
+    document.getElementById("veryRoomyButton").onclick = changeToVeryRoomyImage;
+    </script>
 </body>
 </html>
