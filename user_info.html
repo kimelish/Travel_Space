@@ -127,6 +127,19 @@
     </div>
     <br>
     <img id="bus" src="image/bus_sky.jpg" alt="bus and skytrain">
+    <script>
+        function changeColor() {
+            document.getElementsByClassName("userInfoConfirm")[0].style.color = "white";
+            document.getElementsByClassName("userInfoConfirm")[0].style.backgroundColor = "black";
+        }
+
+        function resumeColor() {
+            document.getElementsByClassName("userInfoConfirm")[0].style.color = "black";
+            document.getElementsByClassName("userInfoConfirm")[0].style.backgroundColor = "rgb(241, 241, 241)";
+        }
+        document.getElementsByClassName("userInfoConfirm")[0].onmousedown = changeColor;
+        document.getElementsByClassName("userInfoConfirm")[0].onmouseup = resumeColor;
+    </script>
 </body>
 
 </html>
