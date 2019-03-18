@@ -100,7 +100,7 @@
                 </td>
                 <td width="19%"><br></td>
                 <td class="signup" rowspan="2" style="text-align: left; font-size: 40px"><b>Travel Space</b></td>
-                <td style="text-align: right;"><b>2950pts</b></td>
+                <td style="text-align: right;"><b id="points">2950pts</b></td>
                 <td><img src="image/reward_sign.png" width="65" height="65"></td>
             </tr>
         </table>
@@ -165,7 +165,7 @@
     <script>
         totalNumberOfClassClaim = document.getElementsByClassName("claim")
         for (let i = 0; i < totalNumberOfClassClaim.length; i++) {
-            
+
             function changeColor() {
                 document.getElementsByClassName("claim")[i].style.backgroundColor = "black";
                 document.getElementsByClassName("claim")[i].style.color = "white";
@@ -178,6 +178,13 @@
             document.getElementsByClassName("claim")[i].onmousedown = changeColor;
             document.getElementsByClassName("claim")[i].onmouseup = resumeColor;
         }
+        function countPoints() {
+            points += 100;
+            return points;
+        }
+        let points = 0;
+        document.getElementById("points").innerHTML = countPoints();
+        
     </script>
 
 </body>
