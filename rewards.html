@@ -162,6 +162,24 @@
         </table>
     </dl>
 
+    <script>
+        totalNumberOfClassClaim = document.getElementsByClassName("claim")
+        for (let i = 0; i < totalNumberOfClassClaim.length; i++) {
+            
+            function changeColor() {
+                document.getElementsByClassName("claim")[i].style.backgroundColor = "black";
+                document.getElementsByClassName("claim")[i].style.color = "white";
+            }
+
+            function resumeColor() {
+                document.getElementsByClassName("claim")[i].style.color = "black";
+                document.getElementsByClassName("claim")[i].style.backgroundColor = "rgb(172, 170, 170)";
+            }
+            document.getElementsByClassName("claim")[i].onmousedown = changeColor;
+            document.getElementsByClassName("claim")[i].onmouseup = resumeColor;
+        }
+    </script>
+
 </body>
 
 </html>
