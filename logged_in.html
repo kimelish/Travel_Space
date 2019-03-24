@@ -12,12 +12,19 @@
         .signup {
             padding: 20px;
         }
-        #bus {
+        #status {
             max-width: 100%;
             max-height: 100%;
         }
         #dropdown {
             text-align:center;
+        }
+        #report {
+        position: absolute;
+        top: 43%;
+        left: 4%;
+        width: 90px;
+        height: 200px;
         }
     </style>
 </head>
@@ -35,11 +42,11 @@
         </table>
     </div>
     <br>
-    <h2 style="text-align: center">Think you can get on board? Check now!</h2>
+    <h2 style="text-align: center">Oh, lots of room!</h2>
     <br>
     <form id="dropdown">
         <select name="stops" id="stops">
-            <option value="">Default location</option>
+            <option value="">Default location - Granville - Eastbound</option>
             <optgroup label="Expo">
                 <option value="Expo">Waterfront - Eastbound</option>
                 <option value="Expo">Burrard - Eastbound</option>
@@ -55,6 +62,12 @@
         </select>
     </form>
     <br><br>
-    <img id="bus" src="image/bus_sky.jpg" alt="bus and skytrain">
+    <img id="report" src="image/report.png" alt="report sign" onclick="report()">
+    <img id="status" src="image/status1.jpg" alt="lots of room">
+    <script>
+        function report(){
+            location.href = "capacity_report.html"
+        }
+    </script>
 </body>
 </html>
