@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Travel Space</title>
+    <style>
+        div {
+            background-color: gray;
+        }
+        .signup {
+            padding: 20px;
+        }
+        #bus {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        #dropdown {
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <table style="width:100%">
+            <tr>
+                <td style="text-align: right;"><img src="image/user_icon.png" width="70" height="70"></td>
+                <td class="signup" rowspan="2" style="text-align: left;"><p><b><i><a href="user_info.html">Welcome!</a></i></b></p></td>
+                <td width="19%"><br></td>
+                <td class="signup" rowspan="2" style="text-align: center; font-size: 40px"><b>Travel Space</b></td>
+                <td style="text-align: right;"><b>0 pts</b><br>Receive credits for reporting crowdedness!</td>
+                <td><a href="rewards.html"><img src="image/reward_sign.png" width="65" height="65"></a></td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <h2 style="text-align: center">Think you can get on board? Check now!</h2>
+    <br>
+    <form id="dropdown">
+        <select name="stops" id="stops">
+            <option value="">Default location</option>
+            <optgroup label="Expo">
+                <option value="Expo">Waterfront - Eastbound</option>
+                <option value="Expo">Burrard - Eastbound</option>
+                <option value="Expo">Burrard - Westbound</option>
+                <option value="Expo">Granville - Eastbound</option>
+                <option value="Expo">Granville - Westbound</option>
+            </optgroup>
+            <optgroup label="Millennium">
+                <option value="Millennium">VCC-Clark - Eastbound</option>
+                <option value="Millennium">Commercial-Broadway - Eastbound</option>
+                <option value="Millennium">Commercial-Broadway - Westbound</option>
+            </optgroup>
+        </select>
+    </form>
+    <br><br>
+    <img id="bus" src="image/bus_sky.jpg" alt="bus and skytrain">
+</body>
+</html>
