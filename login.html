@@ -3,36 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <title>Log-in - Travel Space</title>
-    <style>
-        #text {
-            position: absolute;
-            left: 40%;
-            top: 30%;
-        }
-        #b1 {
-            position: absolute;
-            left: 40%;
-            top: 45%;
-        }
-        #b2 {
-            position: absolute;
-            left: 45%;
-            top: 45%;
-        }
-        #b3 {
-            position: absolute;
-            left: 55%;
-            top: 45%;
-        }
-    </style>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBRhEm0WFOVmSqcRx80650G7KhE1q58o5A",
+        authDomain: "travel-space-9f0a2.firebaseapp.com",
+        databaseURL: "https://travel-space-9f0a2.firebaseio.com",
+        projectId: "travel-space-9f0a2",
+        storageBucket: "travel-space-9f0a2.appspot.com",
+        messagingSenderId: "738064646445"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
 </head>
 <body>
-<form id="text">
-    Email: <input type="text" name="email">
+    <!-- The surrounding HTML is left untouched by FirebaseUI.
+     Your app may use that space for branding, controls and other customizations.-->
+    <!--<h1>Welcome to Travel Space</h1>-->
     <br>
-    <br>
-    Password: <input type="text" name="email">
-</form>
-<button id="b1">Log in</button>   <button id="b2">Forget Password</button>   <button id="b3">Sign up</button>
+    <div>
+        <h3 style="text-align: center;">Enter your email to create a new account</h3>
+    </div>
+    <div id="firebaseui-auth-container"></div>
+    <div id="loader">Loading...</div>
+
+    <script>
+    // Initialize the FirebaseUI Widget using Firebase.
+    var ui = new firebaseui.auth.AuthUI(firebase.auth());
+    var uiConfig = {
+      callbacks: {
+        signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+          // User successfully signed in.
+          // Return type determines whether we continue the redirect automatically
+          // or whether we leave that to developer to handle.
+          return true;
+        },
+        uiShown: function() {
+          // The widget is rendered.
+          // Hide the loader.
+          document.getElementById('loader').style.display = 'none';
+        }
+      },
+      // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+      signInFlow: 'popup',
+      signInSuccessUrl: '/logged_in.html',
+      signInOptions: [
+        // Leave the lines as is for the providers you want to offer your users.
+        // firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+        // firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+        // firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+        // firebase.auth.GithubAuthProvider.PROVIDER_ID,
+        firebase.auth.EmailAuthProvider.PROVIDER_ID,
+        // firebase.auth.PhoneAuthProvider.PROVIDER_ID
+      ],
+      // Terms of service url.
+      tosUrl: '/logged_in.html',
+      // Privacy policy url.
+      privacyPolicyUrl: '/logged_in.html'
+    };
+    // The start method will wait until the DOM is loaded.
+    ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
 </body>
 </html>

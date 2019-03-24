@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Travel Space</title>
+
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBRhEm0WFOVmSqcRx80650G7KhE1q58o5A",
+        authDomain: "travel-space-9f0a2.firebaseapp.com",
+        databaseURL: "https://travel-space-9f0a2.firebaseio.com",
+        projectId: "travel-space-9f0a2",
+        storageBucket: "travel-space-9f0a2.appspot.com",
+        messagingSenderId: "738064646445"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
     <style>
         div {
             background-color: gray;
@@ -29,7 +45,7 @@
                 <td class="signup" rowspan="2"><p><b><i><a href="login.html">Log-in</a></i></b></p></td>
                 <td width="19%"><br></td>
                 <td class="signup" rowspan="2" style="text-align: right; font-size: 40px"><b>Travel Space</b></td>
-                <td style="text-align: right;"><a href="signup.html"><b>Join Now</b></a><br>Receive credits for reporting
+                <td style="text-align: right;"><a href="login.html"><b>Join Now</b></a><br>Receive credits for reporting
                     crowdedness!</td>
                 <td><img src="image/reward_sign.png" width="65" height="65"></td>
             </tr>
@@ -57,5 +73,6 @@
     </form>
     <br><br>
     <img id="bus" src="image/bus_sky.jpg" alt="bus and skytrain">
+    <script src="/js/setup_firebase.js"></script>
 </body>
 </html>
