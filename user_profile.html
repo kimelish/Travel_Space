@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBRhEm0WFOVmSqcRx80650G7KhE1q58o5A",
+            authDomain: "travel-space-9f0a2.firebaseapp.com",
+            databaseURL: "https://travel-space-9f0a2.firebaseio.com",
+            projectId: "travel-space-9f0a2",
+            storageBucket: "travel-space-9f0a2.appspot.com",
+            messagingSenderId: "738064646445"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <title>User Profile</title>
+</head>
+<body>
+        <form id="submit">
+            name: <br>
+            <input type="text" name="name"><br>
+            <input type="submit" value="Submit">
+        </form>
+        <script>
+            export function getName() {
+                this.name = document.getElementById("submit").action;
+                this.newName = name.slice(45, ).split("+").join(" ");
+                updateName(newName);
+            }
+            function updateName(name) {
+                let user_id = "A001";
+                let aName = name;
+                firebase.database().ref("user/"+user_id+"/").update(
+                    {aName:aName});
+            }
+            getName();
+        </script>
+</body>
+</html>
