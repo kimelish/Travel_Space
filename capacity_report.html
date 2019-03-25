@@ -100,12 +100,15 @@
     </div>
 
     <script>
+        //localStorage.setItem("isReported", false);
     function changeToVeryCrowdedImage(){
         let reportTime = new Date()
         firebase.database().ref("report/").set({
             reportImage: "VCImage.jpg", //image address still not known
             reportTime: reportTime.toString()
         });
+        localStorage.setItem('isReported', 'true');
+        var reported = localStorage.getItem('isReported');
     }
     function changeToCrowdedImage(){
         let reportTime = new Date()
@@ -113,6 +116,7 @@
             reportImage: "CImage.jpg", //image address still not known
             reportTime: reportTime.toString()
         });
+        localStorage.setItem("isReported", "true");
     }
     function changeToOkayImage(){
         let reportTime = new Date()
@@ -120,6 +124,7 @@
             reportImage: "OImage.jpg", //image address still not known
             reportTime: reportTime.toString()
         });
+        localStorage.setItem("isReported", "true");
     }
     function changeToRoomyImage(){
         let reportTime = new Date()
@@ -127,6 +132,7 @@
             reportImage: "RImage.jpg", //image address still not known
             reportTime: reportTime.toString()
         });
+        localStorage.setItem("isReported", "true");
     }
     function changeToVeryRoomyImage(){
         let reportTime = new Date()
@@ -134,7 +140,9 @@
             reportImage: "VRImage.jpg", //image address still not known
             reportTime: reportTime.toString()
         });
+        localStorage.setItem("isReported", "true");
     }
+    //console.log(localStorage.getItem("isReported"))
     document.getElementById("veryCrowdedButton").onclick = changeToVeryCrowdedImage;
     document.getElementById("crowdedButton").onclick = changeToCrowdedImage;
     document.getElementById("okayButton").onclick = changeToOkayImage;
