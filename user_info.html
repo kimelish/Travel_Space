@@ -5,6 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBRhEm0WFOVmSqcRx80650G7KhE1q58o5A",
+            authDomain: "travel-space-9f0a2.firebaseapp.com",
+            databaseURL: "https://travel-space-9f0a2.firebaseio.com",
+            projectId: "travel-space-9f0a2",
+            storageBucket: "travel-space-9f0a2.appspot.com",
+            messagingSenderId: "738064646445"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <title>User Information Page</title>
     <style>
         div {
@@ -79,23 +93,47 @@
 <body>
     <p class="fade">
         <dl class="userInfo">
-            <dt>Name</dt><dd>Bob</dd>
-            <br>
-            <dt>Gender</dt><dd>Male</dd>
-            <br>
-            <dt>Address</dt><dd>23 Street Rd., Vancouver, BC.</dd>
-            <br>
-            <dt>Tel</dt><dd>778-123-1234</dd>
-            <br>
-            <dt>Email</dt><dd>bobbus@email.com</dd>
-            <br>
-            <dt>Default Location</dt><dd>Granville Station</dd>
-            <br>
-            <br>
-            <dt>Password</dt><dd>xxxxxxxx</dd>
-            <br>
-            <br>
-            <button class="userInfoConfirm">Confirm</button>
+            <form id="info">
+                <dt>Name</dt>
+                <dd>
+                    <input type="text" name="name" placeholder="Bob">
+                </dd>
+                <br>
+                <dt>Gender</dt>
+                <dd>
+                    <input type="text" name="gender" placeholder="male">
+                </dd>
+                <br>
+                <dt>Address</dt>
+                <dd>
+                    <input type="text" name="address" placeholder="23 Street Rd., Vancouver, BC.">
+                </dd>
+                <br>
+                <dt>Tel</dt>
+                <dd>
+                    <input type="text" name="tel" placeholder="778-123-1234">
+                </dd>
+                <br>
+                <dt>Email</dt>
+                <dd>
+                    <input type="text" name="email" placeholder="bobbus@email.com">
+                </dd>
+                <br>
+                <dt>Default Location</dt>
+                <dd>
+                    <input type="text" name="defaultLocation" placeholder="Granville Station">
+                </dd>
+                <br>
+                <br>
+                <dt>Password</dt>
+                <dd>
+                    <input type="text" name="password" placeholder="xxxxxxxx">
+                </dd>
+                <br>
+                <br>
+                <button class="userInfoConfirm">Confirm</button>
+                <input type="submit" value="Submit">
+            </form>
         </dl>
     </p>
     <div>
@@ -139,6 +177,11 @@
         }
         document.getElementsByClassName("userInfoConfirm")[0].onmousedown = changeColor;
         document.getElementsByClassName("userInfoConfirm")[0].onmouseup = resumeColor;
+    </script>
+    <script type="module">
+        import { getInfo } from "./info.js";
+        // document.getElementById("name").onclick = getName;
+
     </script>
 </body>
 
