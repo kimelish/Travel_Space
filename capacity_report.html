@@ -100,21 +100,40 @@
     </div>
 
     <script>
-    let the_crowdedness_image = search_result.document.getElementById("bus");
     function changeToVeryCrowdedImage(){
-        //will change image on search_result.html to the very crowded image
+        let reportTime = new Date()
+        firebase.database().ref("report/").set({
+            reportImage: "VCImage.jpg", //image address still not known
+            reportTime: reportTime.toString()
+        });
     }
     function changeToCrowdedImage(){
-        //will change image on search_result.html to the crowded image
+        let reportTime = new Date()
+        firebase.database().ref("report/").set({
+            reportImage: "CImage.jpg", //image address still not known
+            reportTime: reportTime.toString()
+        });
     }
     function changeToOkayImage(){
-        //will change image on search_result.html to the okay crowded image
+        let reportTime = new Date()
+        firebase.database().ref("report/").set({
+            reportImage: "OImage.jpg", //image address still not known
+            reportTime: reportTime.toString()
+        });
     }
     function changeToRoomyImage(){
-        //will change image on search_result.html to the roomy image
+        let reportTime = new Date()
+        firebase.database().ref("report/").set({
+            reportImage: "RImage.jpg", //image address still not known
+            reportTime: reportTime.toString()
+        });
     }
     function changeToVeryRoomyImage(){
-        //will change image on search_result.html to the very roomy image
+        let reportTime = new Date()
+        firebase.database().ref("report/").set({
+            reportImage: "VRImage.jpg", //image address still not known
+            reportTime: reportTime.toString()
+        });
     }
     document.getElementById("veryCrowdedButton").onclick = changeToVeryCrowdedImage;
     document.getElementById("crowdedButton").onclick = changeToCrowdedImage;
