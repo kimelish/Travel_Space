@@ -55,13 +55,36 @@
     <h2 style="text-align: center">Please tell us what you think below.</h2>
     <br>
     <form>
-        <textarea name="feedback" rows="10" cols="100">Enter your feedback here...</textarea>
+        <textarea name="feedback" rows="10" cols="100" id="usersFeedback">Enter your feedback here...</textarea>
         <br>
-        <input style="display: block; margin-right: auto; margin-left: auto" type="submit" value="Submit Feedback">
+        <button style="display: block; margin-right: auto; margin-left: auto" type="submit" id="feedbackSubmit">Submit Feedback</button>
     </form>
     <br>
-    <div style="position: absolute; width: 100%; height: 80px; bottom: auto;; color: gray">
+    <div style="position: absolute; width: 100%; height: 80px; bottom: auto;; color: gray"></div>
     <br>
     <img id="logo" src="" width="1250" height="300" alt="Travel Space Logo">
+    <script>
+        let theFeedback = ""
+        var database = firebase.database();
+        var feedbackRef = database.ref('feedback');
+        function addFeedback(){
+            theFeedback = document.getElementById("usersFeedback").value;
+            var theirFeedback = {
+                userFeedback: theFeedback
+            }
+            feedbackRef.push(theirFeedback);
+        }
+        //function changePage(){
+            //window.location.href="feedback_thanks.html";
+        //}
+        //function toThankYou(){
+            //setTimeout(changePage, 1000);
+        //}
+        function clickSubmit(){
+            addFeedback()
+            //toThankYou()
+        }
+        document.getElementById("feedbackSubmit").onclick = clickSubmit;
+    </script>
 </body>
 </html>
