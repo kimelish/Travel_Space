@@ -44,8 +44,8 @@
         <table style="width:100%">
             <tr>
                 <td style="text-align: right;"><img src="image/user_icon.png" width="70" height="70"></td>
-                <td class="signup" rowspan="2" style="text-align: left;"><p><b><i><a href="user_info.html">
-                    Welcome!</a></i></b></p></td>
+                <td class="signup" rowspan="2" style="text-align: left;"><b><i><a id="user_name"></a>
+                    <a href="user_info.html">, welcome!</a></i></b></td>
                 <td width="16.5%"><br></td>
                 <td class="signup" rowspan="2" style="text-align: center; font-size: 40px"><b>Travel Space</b></td>
                 <td style="text-align: right;"><b>0 pts</b><br>Receive credits for reporting crowdedness!</td>
@@ -53,6 +53,16 @@
             </tr>
         </table>
     </div>
+    <script src="create_user.js"></script>
+    <script>
+        var output = document.getElementById("user_name");
+        var deRef = firebase.database().ref("users").child(user.uid+"/name");
+        deRef.on(
+            "value",               //event to read static snapshot of db at initial call, and future chg
+            function(snap){        // event callback receives snapshot
+                output.innerText = snap.val().name;
+            });
+    </script>
     <br>
     <h2 style="text-align: center">Oh, lots of room!</h2>
     <br>
@@ -81,7 +91,6 @@
             location.href = "capacity_report.html"
         }
     </script>
-    <script src="create_user.js"></script>
 
 </body>
 </html>

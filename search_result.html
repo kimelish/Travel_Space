@@ -21,16 +21,18 @@
     #bus {
         max-width: 100%;
         max-height: 100%;
+        z-index: -1;
     }
     #dropdown {
         text-align:center;
     }
     #report {
         position: absolute;
-        top: 43%;
+        top: 40%;
         left: 4%;
         width: 90px;
         height: 200px;
+        z-index: 1;
     }
     </style>
 </head>
@@ -51,27 +53,38 @@
     <br>
     <h2 style="text-align: center" id="message">Oh, lots of room!</h2>
     <br>
+    <script>
+        function search() {
+            let stop_name = document.getElementById("stops").value;
+            localStorage.setItem('selection', stop_name);
+            console.log(stop_name);
+            location.href = "search_result.html"
+        }
+    </script>
     <form id="dropdown">
-        <select name="stops" id="stops">
+        <select name="stops" id="stops" onchange="search()">
             <option value="">Default location</option>
             <optgroup label="Expo">
-                <option value="Expo">Waterfront - Eastbound</option>
-                <option value="Expo">Burrard - Eastbound</option>
-                <option value="Expo">Burrard - Westbound</option>
-                <option value="Expo">Granville - Eastbound</option>
-                <option value="Expo">Granville - Westbound</option>
+                <option value="Expo_Waterfront_Eastbound">Waterfront - Eastbound</option>
+                <option value="Expo_Burrard_Eastbound">Burrard - Eastbound</option>
+                <option value="Expo_Burrard_Westbound">Burrard - Westbound</option>
+                <option value="Expo_Granville_Eastbound">Granville - Eastbound</option>
+                <option value="Expo_Granville_Westbound">Granville - Westbound</option>
             </optgroup>
             <optgroup label="Millennium">
-                <option value="Millennium">VCC-Clark - Eastbound</option>
-                <option value="Millennium">Commercial-Broadway - Eastbound</option>
-                <option value="Millennium">Commercial-Broadway - Westbound</option>
+                <option value="Millennium_VCC-Clark_Eastbound">VCC-Clark - Eastbound</option>
+                <option value="Millennium_Commercial-Broadway_Eastbound">Commercial-Broadway - Eastbound</option>
+                <option value="Millennium_Commercial-Broadway_Westbound">Commercial-Broadway - Westbound</option>
             </optgroup>
         </select>
     </form>
     <br>
-    <img id="bus" src="image/status1.png" alt="status_light">
     <img id="report" src="image/report.png" alt="report sign" onclick="report()">
+    <img id="bus" src="image/status1.png" alt="status">
     <script>
+        let searched_station = localStorage.getItem("selection");
+        console.log(searched_station);
+        document.getElementById("stops").value = searched_station;
         function report(){
             location.href = "capacity_report.html"
         }
