@@ -7,7 +7,7 @@
     <title>Travel Space - Your Feedback</title>
     <style>
         div {
-            background-color: gray;
+            background-color: rgba(6, 71, 137, 1);;
         }
         .signup {
             padding: 20px;
@@ -37,32 +37,30 @@
   firebase.initializeApp(config);
 </script>
 </head>
-<body>
+<body style="background-color: linen;">
     <div>
         <table style="width:100%">
             <tr>
                 <td width="1%"><br></td>
-                <td class="signup" rowspan="2"><p><b><i>Log-in</i></b></p></td>
+                <td class="signup" rowspan="2" style="color: rgba(251, 252, 255, 1);"><p><b><i>Log-in</i></b></p></td>
                 <td width="19%"><br></td>
-                <td class="signup" rowspan="2" style="text-align: right; font-size: 40px"><b>Travel Space</b></td>
-                <td style="text-align: right;"><b>Join Now</b><br>Receive credits for reporting crowdedness!</td>
+                <td class="signup" rowspan="2" style="text-align: right; font-size: 40px; color: rgba(251, 252, 255, 1);"><b>Travel Space</b></td>
+                <td style="text-align: right; color: rgba(251, 252, 255, 1);"><b>Join Now</b><br>Receive credits for reporting crowdedness!</td>
                 <td><img src="image/reward_sign.png" width="65" height="65"></td>
             </tr>
         </table>
     </div>
     <br>
     <br>
-    <h2 style="text-align: center">Please tell us what you think below.</h2>
+    <h2 style="text-align: center; color: rgba(96, 88, 86, 1);">Please tell us what you think below.</h2>
     <br>
     <form>
         <textarea name="feedback" rows="10" cols="100" id="usersFeedback">Enter your feedback here...</textarea>
         <br>
-        <button style="display: block; margin-right: auto; margin-left: auto" type="submit" id="feedbackSubmit">Submit Feedback</button>
+        <button style="display: block; margin-right: auto; margin-left: auto" id="feedbackSubmit">Submit Feedback</button>
     </form>
     <br>
-    <div style="position: absolute; width: 100%; height: 80px; bottom: auto;; color: gray"></div>
     <br>
-    <img id="logo" src="" width="1250" height="300" alt="Travel Space Logo">
     <script>
         let theFeedback = ""
         var database = firebase.database();
@@ -74,15 +72,12 @@
             }
             feedbackRef.push(theirFeedback);
         }
-        //function changePage(){
-            //window.location.href="feedback_thanks.html";
-        //}
-        //function toThankYou(){
-            //setTimeout(changePage, 1000);
-        //}
+        function showThankYou(){
+            alert("Thank you for your feedback!")
+        }
         function clickSubmit(){
-            addFeedback()
-            //toThankYou()
+            addFeedback();
+            showThankYou();
         }
         document.getElementById("feedbackSubmit").onclick = clickSubmit;
     </script>
