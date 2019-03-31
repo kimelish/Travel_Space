@@ -53,14 +53,6 @@
     <br>
     <h2 style="text-align: center" id="message">Oh, lots of room!</h2>
     <br>
-    <script>
-        function search() {
-            let stop_name = document.getElementById("stops").value;
-            localStorage.setItem('selection', stop_name);
-            console.log(stop_name);
-            location.href = "search_result.html"
-        }
-    </script>
     <form id="dropdown">
         <select name="stops" id="stops" onchange="search()">
             <option value="">Default location</option>
@@ -81,13 +73,7 @@
     <br>
     <img id="report" src="image/report.png" alt="report sign" onclick="report()">
     <img id="bus" src="image/status1.png" alt="status">
-    <script>
-        let searched_station = localStorage.getItem("selection");
-        console.log(searched_station);
-        document.getElementById("stops").value = searched_station;
-        function report(){
-            location.href = "capacity_report.html"
-        }
+    <script src="search_report.js">
     </script>
 </body>
 </html>

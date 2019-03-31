@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Travel Space</title>
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
     <style>
         body {
             background-color: #FAF0E6;
@@ -29,14 +32,13 @@
         }
         #report {
         position: absolute;
-        top: 43%;
+        top: 40%;
         left: 4%;
         width: 90px;
         height: 200px;
         }
     </style>
 
-    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
 </head>
 <body>
     <script src="setupfirebase_travelspace.js"></script>
@@ -53,44 +55,49 @@
             </tr>
         </table>
     </div>
-    <script src="create_user.js"></script>
-    <script>
+    <script src="create_user.js">
+        var user = firebase.auth().currentUser;
+          if (user) {
+              console.log(user)
+            // User is signed in.
+          } else {
+              // No user is signed in.
+          }
         var output = document.getElementById("user_name");
-        var deRef = firebase.database().ref("users").child(user.uid+"/name");
+        var deRef = firebase.database().ref().child("users"+userId+"/name");
         deRef.on(
             "value",               //event to read static snapshot of db at initial call, and future chg
             function(snap){        // event callback receives snapshot
-                output.innerText = snap.val().name;
+                output.innerText = snap.val();
             });
     </script>
     <br>
     <h2 style="text-align: center">Oh, lots of room!</h2>
     <br>
     <form id="dropdown">
-        <select name="stops" id="stops">
-            <option value="">Default location - Granville - Eastbound</option>
+       <select name="stops" id="stops" onchange="login_search()">
+            <option value="">Default location</option>
             <optgroup label="Expo">
-                <option value="Expo">Waterfront - Eastbound</option>
-                <option value="Expo">Burrard - Eastbound</option>
-                <option value="Expo">Burrard - Westbound</option>
-                <option value="Expo">Granville - Eastbound</option>
-                <option value="Expo">Granville - Westbound</option>
+                <option value="Expo_Waterfront_Eastbound">Waterfront - Eastbound</option>
+                <option value="Expo_Burrard_Eastbound">Burrard - Eastbound</option>
+                <option value="Expo_Burrard_Westbound">Burrard - Westbound</option>
+                <option value="Expo_Granville_Eastbound">Granville - Eastbound</option>
+                <option value="Expo_Granville_Westbound">Granville - Westbound</option>
             </optgroup>
             <optgroup label="Millennium">
-                <option value="Millennium">VCC-Clark - Eastbound</option>
-                <option value="Millennium">Commercial-Broadway - Eastbound</option>
-                <option value="Millennium">Commercial-Broadway - Westbound</option>
+                <option value="Millennium_VCC-Clark_Eastbound">VCC-Clark - Eastbound</option>
+                <option value="Millennium_Commercial-Broadway_Eastbound">Commercial-Broadway - Eastbound</option>
+                <option value="Millennium_Commercial-Broadway_Westbound">Commercial-Broadway - Westbound</option>
             </optgroup>
         </select>
     </form>
+    <script>
+
+    </script>
     <br><br>
     <img id="report" src="image/report.png" alt="report sign" onclick="report()">
     <img id="status" src="image/status1.png" alt="lots of room">
-    <script>
-        function report(){
-            location.href = "capacity_report.html"
-        }
-    </script>
+    <script src="search_report.js"></script>
 
 </body>
 </html>
