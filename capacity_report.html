@@ -7,7 +7,10 @@
     <title>Travel Space - Report Your Capacity</title>
     <style>
         div {
-            background-color: gray;
+            background-color: rgba(6, 71, 137, 1);
+        }
+        #buttonsDiv {
+            background-color: lightgrey;
         }
         .signup {
             padding: 20px;
@@ -60,24 +63,24 @@
   firebase.initializeApp(config);
 </script>
 </head>
-<body>
+<body style="background-color: linen;">
     <div>
         <table style="width:100%">
             <tr>
                 <td width="1%"><br></td>
-                <td class="signup" rowspan="2"><p><b><i>Log-in</i></b></p></td>
+                <td class="signup" rowspan="2" style="color: rgba(251, 252, 255, 1);"><p><b><i>Log-in</i></b></p></td>
                 <td width="19%"><br></td>
-                <td class="signup" rowspan="2" id="travelSpaceHeader"><b><a href="index.html" id="travelSpaceHeader">Travel Space</a></b></td>
-                <td style="text-align: right;"><b>Join Now</b><br>Receive credits for reporting crowdedness!</td>
+                <td class="signup" rowspan="2" id="travelSpaceHeader"><b><a href="index.html" id="travelSpaceHeader" style="color: rgba(251, 252, 255, 1);">Travel Space</a></b></td>
+                <td style="text-align: right; color: rgba(251, 252, 255, 1);"><b>Join Now</b><br>Receive credits for reporting crowdedness!</td>
                 <td><a href="rewards.html"><img src="image/reward_sign.png" width="65" height="65" alt="reward sign"></a></td>
             </tr>
         </table>
     </div>
     <br>
     <br>
-    <h2 style="text-align: center">Make Your Report Here!</h2>
+    <h2 style="text-align: center; color: rgba(96, 88, 86, 1);">Make Your Report Here!</h2>
     <br>
-    <h2 style="text-align: center">How Crowded is Your Bus/Skytrain?</h2>
+    <h2 style="text-align: center; color: rgba(96, 88, 86, 1);">How Crowded is Your Bus/Skytrain?</h2>
     <br>
     <div id="buttonsDiv">
     <button class="reportingButtons" id="veryCrowdedButton">Very Crowded</button>
@@ -100,49 +103,58 @@
     </div>
 
     <script>
-        //localStorage.setItem("isReported", false);
+    localStorage.setItem("isReported", false);
+    var station = localStorage.getItem("stationName")
     function changeToVeryCrowdedImage(){
         let reportTime = new Date()
-        firebase.database().ref("report/").set({
-            reportImage: "VCImage.jpg", //image address still not known
-            reportTime: reportTime.toString()
-        });
         localStorage.setItem('isReported', 'true');
-        var reported = localStorage.getItem('isReported');
+        var promise = firebase.database().ref("report/" + station).set({
+            reportImage: "status5.png", reportTime: reportTime.toString()
+        });
+        promise.then(function() {
+            window.location.href="search_result.html";
+        })
     }
     function changeToCrowdedImage(){
         let reportTime = new Date()
-        firebase.database().ref("report/").set({
-            reportImage: "CImage.jpg", //image address still not known
-            reportTime: reportTime.toString()
-        });
         localStorage.setItem("isReported", "true");
+        var promise = firebase.database().ref("report/" + station).set({
+            reportImage: "status4.png", reportTime: reportTime.toString()
+        });
+        promise.then(function() {
+            window.location.href="search_result.html";
+        })
     }
     function changeToOkayImage(){
         let reportTime = new Date()
-        firebase.database().ref("report/").set({
-            reportImage: "OImage.jpg", //image address still not known
-            reportTime: reportTime.toString()
-        });
         localStorage.setItem("isReported", "true");
+        var promise = firebase.database().ref("report/" + station).set({
+            reportImage: "status3.png", reportTime: reportTime.toString()
+        });
+        promise.then(function() {
+            window.location.href="search_result.html";
+        })
     }
     function changeToRoomyImage(){
         let reportTime = new Date()
-        firebase.database().ref("report/").set({
-            reportImage: "RImage.jpg", //image address still not known
-            reportTime: reportTime.toString()
-        });
         localStorage.setItem("isReported", "true");
+        var promise = firebase.database().ref("report/" + station).set({
+            reportImage: "status2.png", reportTime: reportTime.toString()
+        });
+        promise.then(function() {
+            window.location.href="search_result.html";
+        })
     }
     function changeToVeryRoomyImage(){
         let reportTime = new Date()
-        firebase.database().ref("report/").set({
-            reportImage: "VRImage.jpg", //image address still not known
-            reportTime: reportTime.toString()
-        });
         localStorage.setItem("isReported", "true");
+        var promise = firebase.database().ref("report/" + station).set({
+            reportImage: "status1.png", reportTime: reportTime.toString()
+        });
+        promise.then(function() {
+            window.location.href="search_result.html";
+        })
     }
-    //console.log(localStorage.getItem("isReported"))
     document.getElementById("veryCrowdedButton").onclick = changeToVeryCrowdedImage;
     document.getElementById("crowdedButton").onclick = changeToCrowdedImage;
     document.getElementById("okayButton").onclick = changeToOkayImage;
