@@ -132,7 +132,7 @@
                     <dt>Reward item</dt><dd>&nbsp3 zone monthly pass</dd>
                     <br>
                     <dt>Description</dt><dd>&nbspThank you for the continuous effort. We will draw 5 people for this reward.</dd>
-                    <button class="claim">Claim</button>
+                    <button id="50000" class="claim">Claim</button>
                 </td>
             </tr>
         </table>
@@ -151,7 +151,7 @@
                     <br>
                     <dt>Description</dt>
                     <dd>&nbspThank you for the continuous effort. We will draw 5 people for this reward.</dd>
-                    <button class="claim">Claim</button>
+                    <button id="35000" class="claim">Claim</button>
                 </td>
             </tr>
         </table>
@@ -170,7 +170,7 @@
                     <br>
                     <dt>Description</dt>
                     <dd>&nbspThank you for the continuous effort. We will draw 5 people for this reward.</dd>
-                    <button class="claim">Claim</button>
+                    <button id="20000" class="claim">Claim</button>
                 </td>
             </tr>
         </table>
@@ -193,7 +193,10 @@
             document.getElementsByClassName("claim")[i].onmouseup = resumeColor;
         }
         function countPoints() {
-            points += 100;
+            let isReported = localStorage.getItem("isReported");
+            if (isReported) {
+                points += 100;
+            }
 
             let user_id = "A001";
             firebase.database().ref("user/" + user_id + "/").update({
@@ -203,9 +206,23 @@
             return points;
 
         }
-        let points = 1000;
-        document.getElementById("points").innerHTML = countPoints(); 
 
+        function deductFiftyThousandPoints(number) {
+            points -= number;
+
+            let user_id = "A001";
+            firebase.database().ref("user/" + user_id + "/").update({
+            hRewardPoints: points
+            });
+
+            return points;
+        }
+
+        let points = 0;
+        document.getElementById("points").innerHTML = countPoints(); 
+        document.getElementById("50000").onclick = deductFiftyThousandPoints(50000);
+        document.getElementById("35000").onclick = deductFiftyThousandPoints(50000);
+        document.getElementById("20000").onclick = deductFiftyThousandPoints(50000);
     </script>
 
 </body>

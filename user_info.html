@@ -96,44 +96,44 @@
             <form id="info">
                 <dt>Name</dt>
                 <dd>
-                    <input type="text" name="name" placeholder="Bob">
+                    <input id="name" type="text" name="name" placeholder="Bob">
                 </dd>
                 <br>
                 <dt>Gender</dt>
                 <dd>
-                    <input type="text" name="gender" placeholder="male">
+                    <input id="gender" type="text" name="gender" placeholder="male">
                 </dd>
                 <br>
                 <dt>Address</dt>
                 <dd>
-                    <input type="text" name="address" placeholder="23 Street Rd., Vancouver, BC.">
+                    <input id="address" type="text" name="address" placeholder="23 Street Rd., Vancouver, BC.">
                 </dd>
                 <br>
                 <dt>Tel</dt>
                 <dd>
-                    <input type="text" name="tel" placeholder="778-123-1234">
+                    <input id="tel" type="text" name="tel" placeholder="778-123-1234">
                 </dd>
                 <br>
                 <dt>Email</dt>
                 <dd>
-                    <input type="text" name="email" placeholder="bobbus@email.com">
+                    <input id="email" type="text" name="email" placeholder="bobbus@email.com">
                 </dd>
                 <br>
                 <dt>Default Location</dt>
                 <dd>
-                    <input type="text" name="defaultLocation" placeholder="Granville Station">
+                    <input id="defaultLocation" type="text" name="defaultLocation" placeholder="Granville Station">
                 </dd>
                 <br>
                 <br>
                 <dt>Password</dt>
                 <dd>
-                    <input type="text" name="password" placeholder="xxxxxxxx">
+                    <input id="password" type="text" name="password" placeholder="xxxxxxxx">
                 </dd>
                 <br>
                 <br>
-                <button class="userInfoConfirm">Confirm</button>
                 <input type="submit" value="Submit">
             </form>
+                <button class="userInfoConfirm">Confirm</button>
         </dl>
     </p>
     <div>
@@ -177,10 +177,32 @@
         }
         document.getElementsByClassName("userInfoConfirm")[0].onmousedown = changeColor;
         document.getElementsByClassName("userInfoConfirm")[0].onmouseup = resumeColor;
+
+        function getItem(item) {
+            let user_id = "A001";
+            let ref = firebase.database().ref("user/" + user_id + "/");
+            ref.on(
+                "value",
+                function (snap) {
+                    return JSON.stringify(snap.val().item)
+                }
+            );
+        }
+
+        document.getElementById("name").innerHTML = getItem("name");
+        document.getElementById("gender").innerHTML = getItem("gender");
+        document.getElementById("address").innerHTML = getItem("address");
+        document.getElementById("tel").innerHTML = getItem("tel");
+        document.getElementById("email").innerHTML = getItem("email");
+        document.getElementById("defaultLocation").innerHTML = getItem("defaultLocation");
+        document.getElementById("password").innerHTML = getItem("password");
+
     </script>
     <script type="module">
         import { getInfo } from "./info.js";
-        // document.getElementById("name").onclick = getName;
+
+        
+
 
     </script>
 </body>
