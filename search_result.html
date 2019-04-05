@@ -34,9 +34,17 @@
         height: 200px;
         z-index: 1;
     }
+    #time {
+        font-size: 10px;
+        top: 100%;
+        text-align: center;
+    }
     </style>
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
 </head>
 <body>
+    <script src="setupfirebase_travelspace.js"></script>
     <div>
         <table style="width:100%">
             <tr>
@@ -73,6 +81,16 @@
     <br>
     <img id="report" src="image/report.png" alt="report sign" onclick="report()">
     <img id="bus" src="image/status1.png" alt="status">
+    <p id="time">here</p>
+    <script>
+        var output = document.getElementById("time");
+        var deRef = firebase.database().ref("report/test/").child("reportTime");
+        var time = deRef.on(
+            "value",               //event to read static snapshot of db at initial call, and future chg
+            function(snap){        // event callback receives snapshot
+                output.innerText = "Last reported time: " + snap.val();
+            });
+    </script>
     <script src="search_report.js">
     </script>
 </body>
