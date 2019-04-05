@@ -41,7 +41,7 @@
 
 </head>
 <body>
-    <script src="setupfirebase_travelspace.js"></script>
+    <script src="js/setupfirebase_travelspace.js"></script>
     <div>
         <table style="width:100%">
             <tr>
@@ -55,7 +55,7 @@
             </tr>
         </table>
     </div>
-    <script src="create_user.js">
+    <script src="js/create_user.js">
         var user = firebase.auth().currentUser;
           if (user) {
               console.log(user)
@@ -64,7 +64,7 @@
               // No user is signed in.
           }
         var output = document.getElementById("user_name");
-        var deRef = firebase.database().ref().child("users"+userId+"/name");
+        var deRef = firebase.database().ref("users/"+user).child("/name");
         deRef.on(
             "value",               //event to read static snapshot of db at initial call, and future chg
             function(snap){        // event callback receives snapshot
@@ -97,7 +97,7 @@
     <br><br>
     <img id="report" src="image/report.png" alt="report sign" onclick="report()">
     <img id="status" src="image/status1.png" alt="lots of room">
-    <script src="search_report.js"></script>
+    <script src="js/search_report.js"></script>
 
 </body>
 </html>
