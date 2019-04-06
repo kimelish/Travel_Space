@@ -8,46 +8,17 @@
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-    <style>
-        body {
-            background-color: #FAF0E6;
-
-        }
-        div {
-            background-color: #064789;
-            color: white;
-        }
-        .signup {
-            padding: 20px;
-        }
-        a:visited {
-            color: white;
-        }
-        #status {
-            max-width: 100%;
-            max-height: 100%;
-        }
-        #dropdown {
-            text-align:center;
-        }
-        #report {
-        position: absolute;
-        top: 40%;
-        left: 4%;
-        width: 90px;
-        height: 200px;
-        }
-    </style>
-
+    <link rel="stylesheet" type="text/css" href="css/logged_in.css">
 </head>
 <body>
     <script src="js/setupfirebase_travelspace.js"></script>
+    <script src="js/create_user.js"></script>
     <div>
-        <table style="width:100%">
+        <table>
             <tr>
                 <td style="text-align: right;"><img src="image/user_icon.png" width="70" height="70"></td>
                 <td class="signup" rowspan="2" style="text-align: left;"><b><i><a id="user_name"></a>
-                    <a href="user_info.html">, welcome!</a></i></b></td>
+                    <a href="user_info.html">Welcome!</a></i></b></td>
                 <td width="16.5%"><br></td>
                 <td class="signup" rowspan="2" style="text-align: center; font-size: 40px"><b>Travel Space</b></td>
                 <td style="text-align: right;"><b>0 pts</b><br>Receive credits for reporting crowdedness!</td>
@@ -55,28 +26,27 @@
             </tr>
         </table>
     </div>
-    <script src="js/create_user.js">
-        var user = firebase.auth().currentUser;
-          if (user) {
-              console.log(user)
-            // User is signed in.
-          } else {
-              // No user is signed in.
-          }
-        var output = document.getElementById("user_name");
-        var deRef = firebase.database().ref("users/"+user).child("/name");
-        deRef.on(
-            "value",               //event to read static snapshot of db at initial call, and future chg
-            function(snap){        // event callback receives snapshot
-                output.innerText = snap.val();
-            });
-    </script>
+<!--    <script>-->
+<!--        var user = firebase.auth().currentUser;-->
+<!--          if (user) {-->
+<!--              console.log(user)-->
+<!--            // User is signed in.-->
+<!--          } else {-->
+<!--              // No user is signed in.-->
+<!--          }-->
+<!--        var output = document.getElementById("user_name");-->
+<!--        var deRef = firebase.database().ref("users/"+user).child("name");-->
+<!--        deRef.once(-->
+<!--            "value",               //event to read static snapshot of db at initial call, and future chg-->
+<!--            function(snap){        // event callback receives snapshot-->
+<!--                output.innerText = snap.val();-->
+<!--            });-->
+<!--    </script>-->
     <br>
-    <h2 style="text-align: center">Oh, lots of room!</h2>
+    <h2 id="message"></h2>
     <br>
     <form id="dropdown">
        <select name="stops" id="stops" onchange="login_search()">
-            <option value="">Default location</option>
             <optgroup label="Expo">
                 <option value="Expo_Waterfront_Eastbound">Waterfront - Eastbound</option>
                 <option value="Expo_Burrard_Eastbound">Burrard - Eastbound</option>
@@ -91,13 +61,10 @@
             </optgroup>
         </select>
     </form>
-    <script>
-
-    </script>
     <br><br>
-    <img id="report" src="image/report.png" alt="report sign" onclick="report()">
-    <img id="status" src="image/status1.png" alt="lots of room">
+    <img id="report" alt="report sign">
+    <img id="bus" alt="status">
+    <p id="time">report time here</p>
     <script src="js/search_report.js"></script>
-
 </body>
 </html>
