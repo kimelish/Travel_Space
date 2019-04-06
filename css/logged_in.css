@@ -1,7 +1,7 @@
 body {
-        background-color: #FAF0E6;
+    background-color: #FAF0E6;
 
-    }
+}
 div {
     background-color: #064789;
     color: white;
@@ -17,11 +17,14 @@ a:visited {
     max-height: 100%;
     z-index: -1;
 }
-#dropdown {
-    text-align:center;
+table {
+    width: 100%;
 }
 #message {
     text-align: center;
+}
+#dropdown {
+    text-align:center;
 }
 #report {
     position: absolute;
