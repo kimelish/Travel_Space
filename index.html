@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Travel Space</title>
-
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
@@ -13,8 +12,6 @@
 </head>
 <body>
     <script src="js/setupfirebase_travelspace.js"></script>
-    <script src="js/search_report.js">
-    </script>
     <div>
         <table style="width:100%">
             <tr>
@@ -33,7 +30,6 @@
     <br>
     <form id="dropdown">
         <select name="stops" id="stops" onchange="search()">
-            <option value="">Default location</option>
             <optgroup label="Expo">
                 <option value="Expo_Waterfront_Eastbound">Waterfront - Eastbound</option>
                 <option value="Expo_Burrard_Eastbound">Burrard - Eastbound</option>
@@ -50,5 +46,6 @@
     </form>
     <br><br>
     <img id="bus" src="image/bus_sky.jpg" alt="bus and skytrain">
+    <script src="js/search_report.js"></script>
 </body>
 </html>
