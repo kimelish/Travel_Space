@@ -1,4 +1,5 @@
-//This function is implemented in index, primarily storing user's choice and redirecting the page to search_result page.
+//This function is implemented in search_result page, primarily storing user's choice and redirecting the page to
+//search_result page.
 function search() {
     let stop_name = document.getElementById("stops").value;
     localStorage.setItem('selection', stop_name);
@@ -44,6 +45,23 @@ function status_to_message(path) {
     }
 }
 
+//Read message from firebase, and print it out in html.
+function display_message(message) {
+    var print_message = document.getElementById("message");
+    var message_deRef = firebase.database().ref("message/").child(status_to_message(message));
+    var message_to_print = message_deRef.once(
+    "value",               //event to read static snapshot of db at initial call, and future chg
+    function(snap){        // event callback receives snapshot
+        print_message.innerText = snap.val();
+    });
+}
+
+//Source image for report image and give it an action.
+function report_pole() {
+    document.getElementById("report").src = "image/report.png";
+    document.getElementById("report").onclick = report;
+}
+
 //Once user select a station from the dropdown list, the value of that station was stored in localstorage. This part
 // makes sure that the dropdown list in search_result page will get the result from localstorage.
 let searched_station = localStorage.getItem("selection");
@@ -65,15 +83,8 @@ setTimeout(function() {
     let image_path = localStorage.getItem("image");
     let message = localStorage.getItem("status");
     document.getElementById("bus").src = image_path;
-    document.getElementById("report").src = "image/report.png";
-    document.getElementById("report").onclick = report;
-    var print_message = document.getElementById("message");
-    var message_deRef = firebase.database().ref("message/").child(status_to_message(message));
-    var message_to_print = message_deRef.once(
-    "value",               //event to read static snapshot of db at initial call, and future chg
-    function(snap){        // event callback receives snapshot
-        print_message.innerText = snap.val();
-    });
+    report_pole();
+    display_message(message);
 }, 910);
 
 
