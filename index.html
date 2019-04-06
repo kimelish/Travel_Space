@@ -29,7 +29,8 @@
     <h2 style="text-align: center">Think you can get on board? Check now!</h2>
     <br>
     <form id="dropdown">
-        <select name="stops" id="stops" onchange="search()">
+        <select name="stops" id="stops" onchange="index_search()">
+            <option value="">Choose a station</option>
             <optgroup label="Expo">
                 <option value="Expo_Waterfront_Eastbound">Waterfront - Eastbound</option>
                 <option value="Expo_Burrard_Eastbound">Burrard - Eastbound</option>
@@ -46,6 +47,6 @@
     </form>
     <br><br>
     <img id="bus" src="image/bus_sky.jpg" alt="bus and skytrain">
-    <script src="js/search_report.js"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>
