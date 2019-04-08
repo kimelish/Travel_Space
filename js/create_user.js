@@ -8,7 +8,8 @@
         firebase.database().ref("users/"+user.uid).update(
 		{
         "name":user.displayName,
-        "email":user.email
+        "email":user.email,
+        "reward_point": 0
         });
         var userId = user.uid;
     });

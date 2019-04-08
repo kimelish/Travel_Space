@@ -2,48 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Search Result - Travel Space</title>
-    <style>
-    body {
-        background-color: #FAF0E6;
-
-    }
-    div {
-        background-color: #064789;
-        color: white;
-    }
-    .signup {
-        padding: 20px;
-    }
-    a:visited {
-        color: white;
-    }
-    #bus {
-        max-width: 100%;
-        max-height: 100%;
-        z-index: -1;
-    }
-    #dropdown {
-        text-align:center;
-    }
-    #report {
-        position: absolute;
-        top: 40%;
-        left: 4%;
-        width: 90px;
-        height: 200px;
-        z-index: 1;
-    }
-    </style>
+    <link rel="stylesheet" type="text/css" href="css/search_result.css">
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
 </head>
 <body>
+    <script src="js/setupfirebase_travelspace.js"></script>
     <div>
         <table style="width:100%">
             <tr>
                 <td width="1%"><br></td>
                 <td class="signup" rowspan="2"><p><b><i><a href="login.html">Log-in</a></i></b></p></td>
-                <td width="19%"><br></td>
+                <td width="26%"><br></td>
                 <td class="signup" rowspan="2" style="text-align: right; font-size: 40px"><b>Travel Space</b></td>
+                <td width="13%"><br></td>
                 <td style="text-align: right;"><a href="login.html"><b>Join Now</b></a><br>Receive credits for reporting
                     crowdedness!</td>
                 <td><img src="image/reward_sign.png" width="65" height="65"></td>
@@ -51,11 +26,10 @@
         </table>
     </div>
     <br>
-    <h2 style="text-align: center" id="message">Oh, lots of room!</h2>
+    <h2 id="message"></h2>
     <br>
     <form id="dropdown">
         <select name="stops" id="stops" onchange="search()">
-            <option value="">Default location</option>
             <optgroup label="Expo">
                 <option value="Expo_Waterfront_Eastbound">Waterfront - Eastbound</option>
                 <option value="Expo_Burrard_Eastbound">Burrard - Eastbound</option>
@@ -71,9 +45,9 @@
         </select>
     </form>
     <br>
-    <img id="report" src="image/report.png" alt="report sign" onclick="report()">
-    <img id="bus" src="image/status1.png" alt="status">
-    <script src="search_report.js">
-    </script>
+    <img id="report" alt="report sign">
+    <img id="bus" alt="status">
+    <p id="time">report time here</p>
+    <script src="js/search_report.js"></script>
 </body>
 </html>
