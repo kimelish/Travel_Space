@@ -61,4 +61,5 @@ body {
 }
 #feedbackLink {
     color: rgba(251, 252, 255, 1);
+    text-decoration: none;
 }
