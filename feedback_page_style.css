@@ -1,0 +1,43 @@
+div {
+    background-color: rgba(6, 71, 137, 1);
+}
+.signup {
+    padding: 20px;
+}
+#bus {
+    max-width: 100%;
+    max-height: 100%;
+}
+textarea{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+body {
+    background-color: linen;
+}
+#travelSpaceHeader{
+    text-align: right;
+    font-size: 40px;
+    text-decoration: none;
+    color: rgba(251, 252, 255, 1)
+}
+#logSign{
+    color: rgba(251, 252, 255, 1);
+}
+#footer {
+    position: absolute;
+    width: 99%;
+    height: 80px;
+    bottom: 0;
+}
+#feedbackSubmit {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    cursor: pointer;
+}
+h2 {
+    text-align: center;
+    color: rgba(96, 88, 86, 1);
+}

@@ -30,7 +30,7 @@ div {
     border: solid black;
     border-width: 5px;
     margin: auto;
-    width: 600px;
+    max-width: 600px;
     padding: 50px;
 }
 #travelSpaceHeader{
@@ -54,7 +54,7 @@ body {
 }
 #footer {
     position: absolute;
-    width: 100%;
+    width: 99%;
     height: 80px;
     bottom: auto;
 }

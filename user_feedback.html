@@ -4,82 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Travel Space - Your Feedback</title>
-    <style>
-        div {
-            background-color: rgba(6, 71, 137, 1);;
-        }
-        .signup {
-            padding: 20px;
-        }
-        #bus {
-            max-width: 100%;
-            max-height: 100%;
-        }
-        textarea{
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-    </style>
-    
-<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBRhEm0WFOVmSqcRx80650G7KhE1q58o5A",
-    authDomain: "travel-space-9f0a2.firebaseapp.com",
-    databaseURL: "https://travel-space-9f0a2.firebaseio.com",
-    projectId: "travel-space-9f0a2",
-    storageBucket: "travel-space-9f0a2.appspot.com",
-    messagingSenderId: "738064646445"
-  };
-  firebase.initializeApp(config);
-</script>
+    <title>Travel Space - Your Feedback</title>    
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="feedback_page_style.css">
 </head>
-<body style="background-color: linen;">
+<body>
+    <script src="feedback_page_script.js"></script>  <!--Import javascript file-->
     <div>
-        <table style="width:100%">
+        <table style="width:100%"> <!--Website Header-->
             <tr>
                 <td width="1%"><br></td>
-                <td class="signup" rowspan="2" style="color: rgba(251, 252, 255, 1);"><p><b><i>Log-in</i></b></p></td>
+                <td class="signup" rowspan="2"><p><b><i><a href="login.html" id="logSign">Log-in</a></i></b></p></td>
                 <td width="19%"><br></td>
-                <td class="signup" rowspan="2" style="text-align: right; font-size: 40px; color: rgba(251, 252, 255, 1);"><b>Travel Space</b></td>
-                <td style="text-align: right; color: rgba(251, 252, 255, 1);"><b>Join Now</b><br>Receive credits for reporting crowdedness!</td>
+                <td class="signup" rowspan="2" id="travelSpaceHeader"><b><a href="index.html" id=travelSpaceHeader>Travel Space</a></b></td>
+                <td style="text-align: right;"><a href="login.html" id="logSign"><b>Join Now</b></a><br>Receive credits for reporting crowdedness!</td>
                 <td><img src="image/reward_sign.png" width="65" height="65"></td>
             </tr>
         </table>
     </div>
     <br>
     <br>
-    <h2 style="text-align: center; color: rgba(96, 88, 86, 1);">Please tell us what you think below.</h2>
+    <h2>Please tell us what you think below.</h2>
     <br>
-    <form>
+    <form> <!--Form for taking users feedback-->
         <textarea name="feedback" rows="10" cols="100" id="usersFeedback">Enter your feedback here...</textarea>
         <br>
-        <button style="display: block; margin-right: auto; margin-left: auto" id="feedbackSubmit">Submit Feedback</button>
+        <button id="feedbackSubmit">Submit Feedback</button>
     </form>
     <br>
     <br>
     <script>
-        let theFeedback = ""
-        var database = firebase.database();
-        var feedbackRef = database.ref('feedback');
-        function addFeedback(){
-            theFeedback = document.getElementById("usersFeedback").value;
-            var theirFeedback = {
-                userFeedback: theFeedback
-            }
-            feedbackRef.push(theirFeedback);
-        }
-        function showThankYou(){
-            alert("Thank you for your feedback!")
-        }
-        function clickSubmit(){
-            addFeedback();
-            showThankYou();
-        }
-        document.getElementById("feedbackSubmit").onclick = clickSubmit;
+        document.getElementById("feedbackSubmit").onclick = clickSubmit; // Code for calling function to send feedback
     </script>
+    <div id="footer"> <!--Websites footer-->
+    <p></p>
+    </div>
 </body>
 </html>

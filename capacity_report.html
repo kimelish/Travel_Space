@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Travel Space - Report Your Capacity</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="capacity_report_style.css">
-<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="capacity_report_style.css"> <!--Import the css stylesheet-->
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script> <!--Initialize the firebase devs code-->
 </head>
 <body>
-    <script src="capacity_report_script_.js"></script>
+    <script src="capacity_report_script_.js"></script> <!--Import the javascript file-->
     <div>
-        <table style="width:100%">
+        <table style="width:100%"> <!--Websites header-->
             <tr>
                 <td width="1%"><br></td>
                 <td class="signup" rowspan="2"><p><b><i><a href="login.html" id="logSign">Log-in</a></i></b></p></td>
@@ -28,7 +28,7 @@
     <br>
     <h2>How Crowded is Your Skytrain?</h2>
     <br>
-    <form id="dropdown">
+    <form id="dropdown"> <!--Dropdown menu for selecting station to report for-->
         <select name="stops" id="stops">
             <optgroup label="Expo">
                 <option value="Expo_Waterfront_Eastbound">Waterfront - Eastbound</option>
@@ -46,7 +46,7 @@
     </form>
     <br>
     <br>
-    <div id="buttonsDiv">
+    <div id="buttonsDiv"> <!--Buttons for choosing how crowded a station is-->
     <button class="reportingButtons" id="veryCrowdedButton">Very Crowded</button>
     <br>
     <button class="reportingButtons" id="crowdedButton">Crowded</button>
@@ -59,7 +59,6 @@
     </div>
     <br>
     <br>
-    <img id="bus" src="image/bus_sky.jpg" width="1250" height="300" alt="bus and skytrain">
     <br>
     <br>
     <div id="footer">
