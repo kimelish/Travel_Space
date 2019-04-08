@@ -6,6 +6,9 @@ div {
     background-color: #064789;
     color: white;
 }
+div table td a {
+    text-decoration: none;
+}
 .signup {
     padding: 20px;
 }
