@@ -2,6 +2,4 @@
 Group project creating travel_space web app by Josh Kim, James Pike, Shih-Hung Chang
 
 #### travel space
-- Travel space provides a platform for users to look up the crowdedness of the skytrain they want to take, and report 
-the crowdedness of the skytrain they are taking. By doing so, we encourage the use of public transportation, reduce the 
-number of cars on the road, improve commute times, and reduce greenhouse gas emissions. 
+- Travel space provides a platform for users to look up the crowdedness of the skytrain they want to take, in metro vancouver, and report the crowdedness of the skytrain they are taking. By doing so, we encourage the use of public transportation, reduce the number of cars on the road, improve commute times, and reduce greenhouse gas emissions. This is done through users self-reporting and the webapp reading those reports from a firebase database. Secondary functions include a rewards system still in development and a feedback system which allows users to send feedback to the developers. Links for the feedback are still being implemented throughout the project and minor styling touch-ups are needed throughout.
