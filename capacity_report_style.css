@@ -1,0 +1,47 @@
+div {
+    background-color: rgba(6, 71, 137, 1);
+}
+#buttonsDiv {
+    background-color: lightgrey;
+}
+.signup {
+    padding: 20px;
+}
+#bus {
+    max-width: 100%;
+    max-height: 100%;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 700px;
+    height: 500px;
+}
+.reportingButtons{
+    display: block;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 30px;
+    cursor: pointer;
+}
+#buttonsDiv{
+    border: solid black;
+    border-width: 5px;
+    margin: auto;
+    width: 600px;
+    padding: 50px;
+}
+#travelSpaceHeader{
+    text-align: right;
+    font-size: 40px;
+    text-decoration: none;
+    color: rgba(251, 252, 255, 1)
+}
+#logSign{
+    color: rgba(251, 252, 255, 1);
+}
+#dropdown {
+text-align:center;
+}
